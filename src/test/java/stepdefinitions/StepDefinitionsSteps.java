@@ -1,14 +1,23 @@
+package stepdefinitions;
+
 import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.WebDriver;
 
-public class StepDefinitions {
+public class StepDefinitionsSteps {
+    private static WebDriver driver;
 
-    @Given("^I am on the \"([^\"]*)\"$")
-    public void i_am_on_the(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    public StepDefinitionsSteps(){driver = Driver.getDriver();}
+
+
+    @Given("^I am on the home page of petclinic$")
+    public void i_am_on_the_home_page_of_petclinic() {
+        System.out.println("Ben ik hier?");
+        driver.get("http://petclinic.dev-oelan.test-rig.net");
+
+
     }
 
     @Then("^I should see \"([^\"]*)\"$")
@@ -46,5 +55,6 @@ public class StepDefinitions {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+
 
 }
