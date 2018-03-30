@@ -5,8 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-
-
 public class FindOwnerPage {
 
     public FindOwnerPage(WebDriver driver) {
@@ -20,14 +18,9 @@ public class FindOwnerPage {
     private WebElement searchLastName;
 
     public void enterLastName(String lastName){
-
     }
 
     public void pressFindOwner(){
         findOwner.click();
-
     }
-
-
-
 }
