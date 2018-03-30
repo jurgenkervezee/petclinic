@@ -4,6 +4,7 @@ import cucumber.api.PendingException;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 
 public class StepDefinitionsSteps {
@@ -16,12 +17,14 @@ public class StepDefinitionsSteps {
     @Given("^I am on the home page of petclinic$")
     public void i_am_on_the_home_page_of_petclinic() {
         driver.get("http://localhost:8080/");
+
     }
 
-    @Then("^I should see \"([^\"]*)\"$")
-    public void i_should_see(String arg1) throws Throwable {
 
-        throw new PendingException();
+    @Then("^I should see \"([^\"]*)\"$")
+    public void i_should_see(String arg1) {
+        Assert.assertEquals(driver.getTitle(), arg1);
+        driver.close();
     }
 
     @Given("^I press \"([^\"]*)\"$")

@@ -1,3 +1,5 @@
+package pageobjects;
+
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.FindBy;
 

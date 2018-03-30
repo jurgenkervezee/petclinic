@@ -2,7 +2,7 @@ Feature: Browsing around
 
   Scenario: The home page
     Given I am on the home page of petclinic
-    Then I should see "Welcome"
+    Then I should see "PetClinic :: a Spring Framework demonstration"
 
 #  Scenario: Owner page
 #    Given I am on the "owners search page"
