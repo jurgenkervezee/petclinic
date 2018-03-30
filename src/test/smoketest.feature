@@ -6,7 +6,7 @@ Feature: Browsing around
 
   Scenario: Owner page
     Given I am on the owners search page
-    And I press Find Owner
+#    And I press Find Owner
 #    When I follow "George Franklin"
 #    Then I should see "Pets and Visits"
 #    And I should see "Leo"

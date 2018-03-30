@@ -3,9 +3,9 @@ Feature: Owners
   Scenario: Owner page
     Given I am on the "owners search page"
     And I press "Find Owner"
-    When I select "George Franklin"
-    Then I should see "Pets and Visits"
-    And I should see "Leo"
+    When I select owner "George Franklin"
+    Then I should see heading "Pets and Visits"
+    And I should see pet name "Leo"
 
 #  Scenario: Edit Owner
 #    Given I am on the "owners search page"

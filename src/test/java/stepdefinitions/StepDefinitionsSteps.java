@@ -30,9 +30,10 @@ public class StepDefinitionsSteps {
 
     }
 
-    @Then("^I should see \"([^\"]*)\"$")
-    public void i_should_see(String arg1) {
-        Assert.assertEquals(driver.getTitle(), arg1);
+    @Then("^I should see pet name \"([^\"]*)\"$")
+    public void i_should_see(String petName) {
+        FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
+        Assert.assertEquals(findOwnerPage.petName(petName).getText(), petName);
     }
 
     @And("^I press Find Owner$")
@@ -49,28 +50,35 @@ public class StepDefinitionsSteps {
         throw new PendingException();
     }
 
-    @Given("^I open nos\\.nl$")
-    public void i_open_nos_nl() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @Given("^I launch nos\\.nl$")
-    public void i_launch_nos_nl() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
-
-    @Given("^I am at nos\\.nl$")
-    public void i_am_at_nos_nl() throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
-    }
     @After
     public void closeBrowser(){
         //driver.close();
 
     }
 
+    @Given("^I am on the \"owners search page\"$")
+    public void iAmOnThe() throws Throwable {
+        driver.get("http://localhost:8080/owners/find");
+    }
+
+    @And("^I press \"Find Owner\"$")
+    public void iPress() throws Throwable {
+        FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
+        findOwnerPage.pressFindOwner();
+    }
+
+    @When("^I select owner \"([^\"]*)\"$")
+    public void iSelect(String owner) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
+        findOwnerPage.clickOwner(owner);
+    }
+
+    @Then("^I should see heading \"([^\"]*)\"$")
+    public void iShouldSeeHeading(String heading) throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
+        Assert.assertEquals(findOwnerPage.resultHeading(heading).getText(),heading);
+    }
 }
 
