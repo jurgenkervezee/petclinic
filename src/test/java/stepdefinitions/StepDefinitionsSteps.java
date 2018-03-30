@@ -1,11 +1,14 @@
 package stepdefinitions;
 
 import cucumber.api.PendingException;
+import cucumber.api.java.After;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import pageobjects.*;
+
 
 public class StepDefinitionsSteps {
 
@@ -20,17 +23,20 @@ public class StepDefinitionsSteps {
 
     }
 
+    @Given("^I am on the owners search page$")
+    public void i_am_on_the_owners_search_page() {
+        driver.get("http://localhost:8080/owners/find");
+
+    }
 
     @Then("^I should see \"([^\"]*)\"$")
     public void i_should_see(String arg1) {
         Assert.assertEquals(driver.getTitle(), arg1);
-        driver.close();
     }
 
-    @Given("^I press \"([^\"]*)\"$")
-    public void i_press(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
-        throw new PendingException();
+    @Given("^I press find owner$")
+    public void i_press_find_owner(){
+
     }
 
     @When("^I follow \"([^\"]*)\"$")
@@ -56,6 +62,11 @@ public class StepDefinitionsSteps {
         // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
     }
+    @After
+    public void closeBrowser(){
+        driver.close();
 
+    }
 
 }
+
