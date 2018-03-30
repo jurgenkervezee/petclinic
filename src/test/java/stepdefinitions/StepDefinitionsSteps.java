@@ -7,6 +7,7 @@ import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 
 public class StepDefinitionsSteps {
+
     private static WebDriver driver;
 
     public StepDefinitionsSteps(){driver = Driver.getDriver();}
@@ -14,15 +15,12 @@ public class StepDefinitionsSteps {
 
     @Given("^I am on the home page of petclinic$")
     public void i_am_on_the_home_page_of_petclinic() {
-        System.out.println("Ben ik hier?");
-        driver.get("http://petclinic.dev-oelan.test-rig.net");
-
-
+        driver.get("http://localhost:8080/");
     }
 
     @Then("^I should see \"([^\"]*)\"$")
     public void i_should_see(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
+
         throw new PendingException();
     }
 
