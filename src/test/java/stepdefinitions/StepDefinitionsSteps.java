@@ -2,6 +2,7 @@ package stepdefinitions;
 
 import cucumber.api.PendingException;
 import cucumber.api.java.After;
+import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
@@ -34,8 +35,11 @@ public class StepDefinitionsSteps {
         Assert.assertEquals(driver.getTitle(), arg1);
     }
 
-    @Given("^I press find owner$")
+    @And("^I press Find Owner$")
     public void i_press_find_owner(){
+        FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
+        findOwnerPage.enterLastName("Henk");
+        findOwnerPage.pressFindOwner();
 
     }
 
@@ -64,7 +68,7 @@ public class StepDefinitionsSteps {
     }
     @After
     public void closeBrowser(){
-        driver.close();
+        //driver.close();
 
     }
 
