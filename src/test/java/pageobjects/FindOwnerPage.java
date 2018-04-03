@@ -15,12 +15,10 @@ public class FindOwnerPage {
 
     private WebDriver driver;
 
- //   @FindBy(id="search-owner-form")
-  //  @FindBy(xpath = "//button[text()[contains(.,'Find\\n          Owner')]]")
     @FindBy(css = "button[type='submit']")
-    private WebElement findOwner;
+     private WebElement findOwner;
 
-    @FindBy(id="lastName")
+    @FindBy(id = "lastName")
     private WebElement searchLastName;
 
     public void enterLastName(String lastName){

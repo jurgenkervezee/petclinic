@@ -8,6 +8,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import pageobjects.*;
 
 
@@ -17,17 +18,20 @@ public class StepDefinitionsSteps {
 
     public StepDefinitionsSteps(){driver = Driver.getDriver();}
 
-
     @Given("^I am on the home page of petclinic$")
     public void i_am_on_the_home_page_of_petclinic() {
         driver.get("http://localhost:8080/");
-
     }
 
     @Given("^I am on the owners search page$")
     public void i_am_on_the_owners_search_page() {
         driver.get("http://localhost:8080/owners/find");
+    }
 
+    @Then("^I should see PetClinic :: a Spring Framework demonstration$")
+    public void i_should_see_title() {
+        MainPage mainPage = new MainPage(driver);
+        Assert.assertEquals(mainPage.resultTitle(), "PetClinic :: a Spring Framework demonstration");
     }
 
     @Then("^I should see pet name \"([^\"]*)\"$")
@@ -41,19 +45,11 @@ public class StepDefinitionsSteps {
         FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
         findOwnerPage.enterLastName("Henk");
         findOwnerPage.pressFindOwner();
-
     }
 
     @When("^I follow \"([^\"]*)\"$")
     public void i_follow(String arg1) throws Throwable {
-        // Write code here that turns the phrase above into concrete actions
         throw new PendingException();
-    }
-
-    @After
-    public void closeBrowser(){
-        //driver.close();
-
     }
 
     @Given("^I am on the \"owners search page\"$")
@@ -79,6 +75,11 @@ public class StepDefinitionsSteps {
         // Write code here that turns the phrase above into concrete actions
         FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
         Assert.assertEquals(findOwnerPage.resultHeading(heading).getText(),heading);
+    }
+
+    @After
+    public void tearDown(){
+        driver.close();
     }
 }
 

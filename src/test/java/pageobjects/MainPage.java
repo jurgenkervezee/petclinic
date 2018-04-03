@@ -8,10 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 public class MainPage {
 
     public MainPage(WebDriver driver) {
+
         PageFactory.initElements(driver, this);
     }
 
-@FindBy(id="PetClinic :: a Spring Framework demonstration")
-private WebElement titleMainPage;
+    private WebDriver driver;
+
+    @FindBy(xpath="/html/head/title")
+    private WebElement pageTitle;
+
+
+    public String resultTitle() {
+        return pageTitle.getAttribute("innerHTML");
+    }
 
 }
