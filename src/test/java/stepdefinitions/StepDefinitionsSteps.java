@@ -60,7 +60,7 @@ public class StepDefinitionsSteps {
     }
 
     @And("^I press \"Find Owner\"$")
-    public void iPress() throws Throwable {
+    public void iPressFindOwner() throws Throwable {
         FindOwnerPage findOwnerPage= new FindOwnerPage(driver);
         findOwnerPage.pressFindOwner();
     }
@@ -83,5 +83,12 @@ public class StepDefinitionsSteps {
     public void tearDown(){
         driver.close();
     }
+
+    @And("^I press the button \"Find Owner\"$")
+    public void iPressTheButtonFindOwner() throws Throwable {
+        // Write code here that turns the phrase above into concrete actions
+        i_press_find_owner();
+    }
+
 }
 

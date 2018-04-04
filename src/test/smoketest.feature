@@ -15,10 +15,4 @@ Feature: Browsing around
 #    Given I am on the "home page"
 #    Given I am on the "owners search page"
 #    Given I am on the "new owner page"
-#
-#
-#  Scenario: Alternatieven voorbeeld
-#    Given I open nos.nl
-#    Given I launch nos.nl
-#    Given I am at nos.nl
 

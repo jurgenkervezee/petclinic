@@ -7,9 +7,9 @@ Feature: Owners
     Then I should see heading "Pets and Visits"
     And I should see pet name "Leo"
 
-#  Scenario: Edit Owner
-#    Given I am on the "owners search page"
-#    And I press "Find Owner"
+  Scenario: Edit Owner
+    Given I am on the "owners search page"
+    And I press the button "Find Owner"
 #    When I follow "George Franklin"
 #    And follow "Edit"
 #    And fill in "First Name" with "Harold"
