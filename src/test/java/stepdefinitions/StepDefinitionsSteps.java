@@ -20,12 +20,14 @@ public class StepDefinitionsSteps {
 
     @Given("^I am on the home page of petclinic$")
     public void i_am_on_the_home_page_of_petclinic() {
-        driver.get("http://localhost:8080/");
+        //driver.get("http://localhost:8080/");
+        driver.get("http://petclinic-orange.dev-oelan.test-rig.net/");
     }
 
     @Given("^I am on the owners search page$")
     public void i_am_on_the_owners_search_page() {
-        driver.get("http://localhost:8080/owners/find");
+        //driver.get("http://localhost:8080/owners/find");
+        driver.get("http://petclinic-orange.dev-oelan.test-rig.net//owners/find");
     }
 
     @Then("^I should see PetClinic :: a Spring Framework demonstration$")
